@@ -6,9 +6,9 @@ import Header from './Header';
 const Layout = ({ children }) => {
   return (
     <div>
-      <Header/>
+      <Header />
       <Toaster />
-      <main className="md:px-20 lg:px-24 xl:px-44 bg-slate-950">
+      <main className="pt-11 md:px-20 lg:px-24 xl:px-44 bg-slate-950">
         {children}
       </main>
       <Footer />

@@ -142,7 +142,7 @@ const Dashboard = () => {
 
   return (
     <Layout>
-      <div className="flex flex-col h-screen bg-slate-950">
+      <div className="flex flex-col min-h-screen bg-slate-950">
         <div className="flex-1 p-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-4">
             <div className="bg-green-200 border-2 border-green-500 rounded-xl p-4 text-center">

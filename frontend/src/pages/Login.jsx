@@ -23,21 +23,22 @@ const Login = () => {
         `${process.env.REACT_APP_API}/api/v1/auth/login`,
         { email, password }
       );
+      localStorage.setItem('auth', JSON.stringify(res.data));
+
       if (res.data.success) {
         toast.success(res.data && res.data.message);
+
         setAuth({
           ...auth,
           user: res.data.user,
           token: res.data.token,
         });
 
-        localStorage.setItem('auth', JSON.stringify(res.data));
         navigate(location.state || '/dashboard/account-page');
       } else {
         toast.error(res.data && res.data.message);
       }
     } catch (error) {
-      console.log(error);
       console.log(error);
       if (error.response && error.response.status === 401) {
         toast.error(error.response.data.message);
@@ -56,7 +57,7 @@ const Login = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen flex justify-center items-center bg-slate-950">
+      <div className="min-h-screen flex justify-center items-center bg-slate-950 p-5">
         <div className="bg-slate-700 p-8 rounded-xl shadow-lg  sm:w-96 lg:w-3/5 lg:grid lg:grid-cols-2 lg:gap-10 lg:items-center">
           <div>
             <img

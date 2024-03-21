@@ -55,7 +55,7 @@ const Register = () => {
   return (
     <Layout>
       {loading && <Spinner />}
-      <div className="min-h-screen flex justify-center items-center bg-slate-950 over">
+      <div className="min-h-screen flex justify-center items-center bg-slate-950 over p-5 pt-7">
         <div className="bg-slate-700 p-8 rounded-xl shadow-lg w-full sm:w-96 lg:w-3/5 lg:grid lg:grid-cols-2 lg:gap-10 lg:items-center">
           <div>
             <img

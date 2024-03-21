@@ -31,7 +31,7 @@ const AccountForm = ({ onAccountCreated }) => {
 
   return (
     <>
-      <div className="py-4">
+      <div className="py-4 pt-11">
         <h2 className="text-xl font-semibold mb-2 text-white text-center">
           Add Account
         </h2>
