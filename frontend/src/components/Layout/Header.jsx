@@ -63,7 +63,7 @@ const Header = () => {
               <div className=" flex justify-between items-center space-x-4 text-white">
                 <NavLink
                   to="/"
-                  className="hover:bg-gray-700 px-3 py-2 flex items-center rounded-md text-md font-medium "
+                  className="hover:bg-gray-700 hover:shadow-sm hover:shadow-teal-400 px-3 py-2 flex items-center rounded-md text-md font-semibold "
                 >
                   <TbUserSquareRounded
                     className="pr-2 text-teal-400"
@@ -73,7 +73,7 @@ const Header = () => {
                 </NavLink>
                 <NavLink
                   to="/dashboard/account-page"
-                  className="flex items-center hover:bg-gray-700 px-3 py-2 rounded-md text-md font-medium"
+                  className="flex items-center hover:shadow-sm hover:shadow-green-400 hover:bg-gray-700 px-3 py-2 rounded-md text-md font-semibold"
                 >
                   <LiaMoneyCheckAltSolid
                     className="pr-2 text-green-400"
@@ -84,7 +84,7 @@ const Header = () => {
                 <NavLink
                   to="/login"
                   onClick={handleLogout}
-                  className="flex items-center hover:bg-gray-700 px-3 py-2 rounded-md text-md font-medium"
+                  className="flex items-center hover:shadow-sm hover:shadow-red-400 hover:bg-gray-700 px-3 py-2 rounded-md text-md font-semibold"
                 >
                   <TbLogout2 className="pr-2 text-red-400" size={30} />
                   Logout
@@ -94,13 +94,13 @@ const Header = () => {
               <div className=" flex justify-between items-center space-x-4 text-white">
                 <NavLink
                   to="/register"
-                  className="hover:bg-gray-700 px-3 py-2 flex items-center rounded-md text-md font-medium "
+                  className="hover:text-sky-400 hover:shadow-sm hover:shadow-sky-300 bg-slate-600 px-3 py-2 flex items-center rounded-md text-md font-semibold "
                 >
                   Register
                 </NavLink>
                 <NavLink
                   to="/login"
-                  className="flex items-center hover:bg-gray-700 px-3 py-2 rounded-md text-md font-medium"
+                  className="flex items-center hover:text-sky-400 px-3 py-2 rounded-md text-md font-semibold"
                 >
                   Login
                 </NavLink>

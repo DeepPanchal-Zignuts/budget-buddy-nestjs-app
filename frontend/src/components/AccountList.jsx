@@ -139,11 +139,11 @@ const AccountList = ({ onAccountCreated }) => {
       <h1 className="text-white text-center text-xl font-semibold mt-5">
         {owner}'s Accounts
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 bg-slate-950">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 p-4 bg-slate-950">
         {accounts.map((account) => (
           <div
             key={account._id}
-            className="bg-slate-700 rounded-xl shadow-md p-4 flex flex-col justify-between border"
+            className="bg-slate-700 rounded-2xl shadow-inner p-4 flex flex-row justify-between shadow-slate-500"
           >
             <div>
               {editAccount && editAccount._id === account._id ? (
@@ -163,30 +163,38 @@ const AccountList = ({ onAccountCreated }) => {
                 </>
               ) : (
                 <>
-                  <h1 className="flex items-center text-3xl font-semibold text-orange-400 italic">
+                  <h1 className="flex items-center text-3xl font-semibold text-amber-400 italic">
                     <CiBank />
                     <span className="pl-2">{account.name}</span>
                   </h1>
-                  <p className="flex items-center text-2xl text-cyan-200">
+                  <p className="flex items-center text-2xl text-green-400">
                     <MdAccountBalanceWallet />
                     <span className="font-bold pl-2">{account.balance}</span>
                   </p>
+                  <div>
+                    <button
+                      onClick={() => handleGoIn(account)}
+                      className="border border-blue-300 shadow-sm shadow-blue-300 hover:bg-blue-600  hover:shadow-blue-300 text-white font-semibold px-4 py-2 rounded-xl"
+                    >
+                      Go in
+                    </button>
+                  </div>
                 </>
               )}
             </div>
-            <div className="mt-4 flex justify-between items-center">
+            <div className=" flex justify-between items-start">
               <div className="flex gap-x-2">
                 {!editAccount || editAccount._id !== account._id ? (
                   <>
                     <button
                       onClick={() => handleDeleteAccountClick(account)} // Pass account to the click handler
-                      className="text-red-600 hover:text-red-800 focus:outline-none"
+                      className="text-red-500 hover:text-red-700 focus:outline-none"
                     >
                       <MdDelete size={20} />
                     </button>
                     <button
                       onClick={() => handleEditAccount(account)}
-                      className="text-yellow-500 hover:text-yellow-700 focus:outline-none"
+                      className="text-blue-400 hover:text-blue-600 focus:outline-none"
                     >
                       <MdEdit size={20} />
                     </button>
@@ -207,14 +215,6 @@ const AccountList = ({ onAccountCreated }) => {
                     </button>
                   </>
                 )}
-              </div>
-              <div>
-                <button
-                  onClick={() => handleGoIn(account)}
-                  className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded"
-                >
-                  Go in
-                </button>
               </div>
             </div>
             <DeleteModal
